@@ -1,12 +1,17 @@
 import '@mantine/core/styles.css';
 
-import { MantineProvider } from '@mantine/core';
-import { Title } from '@mantine/core';
+import { MantineProvider, createTheme } from '@mantine/core';
+import { Layout } from './components/Layout';
+
+const theme = createTheme({
+  fontFamily: 'Inter',
+});
 
 function App() {
   return (
-    <MantineProvider>
-      <Title order={1}>Weather App</Title>
+    <MantineProvider theme={theme}>
+      <Layout>
+      </Layout>
     </MantineProvider>
   )
 }
