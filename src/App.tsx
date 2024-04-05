@@ -1,12 +1,36 @@
-import '@mantine/core/styles.css';
+import '@mantine/core/styles.css'
+import { Suspense } from 'react'
+import { Route, Routes, useLocation } from "react-router-dom"
+import { MantineProvider, createTheme } from '@mantine/core'
+import { Layout } from './components/Common/Layout'
+import { routes } from './routes'
+import Loading from './components/Common/Loading'
 
-import { MantineProvider } from '@mantine/core';
-import { Title } from '@mantine/core';
+const theme = createTheme({
+  fontFamily: 'Inter',
+});
 
 function App() {
+  const location = useLocation();
   return (
-    <MantineProvider>
-      <Title order={1}>Weather App</Title>
+    <MantineProvider theme={theme}>
+      <Layout>
+        <Suspense fallback={<Loading />}>
+          <Routes location={location}>
+            {routes.map((route) => {
+              return (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={
+                    <route.component />
+                  }
+                />
+              );
+            })}
+          </Routes>
+        </Suspense>
+      </Layout>
     </MantineProvider>
   )
 }

@@ -22,3 +22,27 @@ button {
   font-family: inherit;
   cursor: pointer;
 }
+
+.icon-wrap {
+  width: fit-content;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 80px;
+  float: left;
+}
+
+.icon-wrap .icon, .icon-wrap .wi {
+  font-size: 4rem;
+  display: inline-block;
+  font-family: 'weathericons';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  float: left;
+  min-width: 54px;
+  text-align: center;
+}
