@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
 import { AppShell, Burger, NavLink } from "@mantine/core"
+import { Link, useLocation } from "react-router-dom"
 import { useDisclosure } from "@mantine/hooks"
 import { Logo } from "../Logo"
 import styles from "./Layout.module.css"
@@ -17,14 +17,7 @@ const menu = [
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   const [opened, { toggle }] = useDisclosure()
-  const [active, setActive] = useState(0)
-
-  useEffect(() => {
-    if (window.location.href.includes('forecast'))
-      setActive(1)
-    else
-      setActive(0)
-  }, [])
+  let location = useLocation()
 
   return (
     <AppShell
@@ -47,12 +40,13 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       </AppShell.Header>
 
       <AppShell.Navbar p="xl" className={styles.navbar}>
-        {menu?.map((item, index) => (
+        {menu?.map((item) => (
           <NavLink
             key={item.label}
-            href={item.href}
+            component={Link}
+            to={item.href}
+            active={location.pathname == item.href}
             label={item.label}
-            active={active === index}
           />
         ))}
       </AppShell.Navbar>

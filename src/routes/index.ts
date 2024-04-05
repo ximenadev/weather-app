@@ -8,16 +8,13 @@ export const routes = [
   {
     path: "/",
     component: Home,
-    requiresAuth: false,
   },
   {
     path: "/forecast",
     component: Forecast,
-    requiresAuth: false,
   },
   {
     path: "*",
     component: NotFound,
-    requiresAuth: false,
   },
 ];

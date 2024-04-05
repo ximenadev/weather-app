@@ -21,21 +21,21 @@ const DayCard = ({ item }: {
       </Card.Section>
       <Card.Section inheritPadding p="md">
         <CustomTitle
-          text={`Min: ${item.temp.min} °F`}
+          text={`Min: ${item.main.temp_min} °F`}
           order={2}
           addedStyles={{
             fontSize: "clamp(1.5rem, 2vw, 2.5rem)",
             textTransform: "unset",
-            color: item.temp.min > 75 ? "#ffd191" : "#7bc7dd"
+            color: item.main.temp_min > 75 ? "#ffd191" : "#7bc7dd"
           }}
         />
         <CustomTitle
-          text={`Max: ${item.temp.max} °F`}
+          text={`Max: ${item.main.temp_max} °F`}
           order={2}
           addedStyles={{
             fontSize: "clamp(1.5rem, 2vw, 2.5rem)",
             textTransform: "unset",
-            color: item.temp.max > 75 ? "#ffd191" : "#7bc7dd"
+            color: item.main.temp_max > 75 ? "#ffd191" : "#7bc7dd"
           }}
         />
       </Card.Section>

@@ -2,9 +2,7 @@
 
 ## API KEY
 
-- You will need an API KEY and a subscription from [Open Weather](https://openweathermap.org/api/one-call-3) to correctly display the data in the Forecast tab.
-
-- If you don' have an active API KEY with subscription, you can test with the mockup list JSON that is on the component.
+- You will need an API KEY  [Open Weather](https://openweathermap.org/).
 
 ## RUN PROJECT
 
