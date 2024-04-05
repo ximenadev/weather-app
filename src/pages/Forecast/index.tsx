@@ -11,71 +11,71 @@ import { useGetForecastDataQuery } from "../../reducers/ForecastSlice"
 import DayCard from "../../components/Forecast/DayCard"
 
 //JSON dummy if your API Key hasn't been activated and you want to check component view
-const mockupList = [
-  {
-    dt: 1712383200,
-    temp: {
-      min: 20,
-      max: 100
-    },
-  },
-  {
-    dt: 1712469600,
-    temp: {
-      min: 80.74,
-      max: 100
-    },
-  },
-  {
-    dt: 1712556000,
-    temp: {
-      min: 100,
-      max: 105
-    },
-  },
-  {
-    dt: 1712642400,
-    temp: {
-      min: 90,
-      max: 95
-    },
-  },
-  {
-    dt: 1712728800,
-    temp: {
-      min: 89.74,
-      max: 100
-    },
-  },
-  {
-    dt: 1712815200,
-    temp: {
-      min: 30,
-      max: 43
-    },
-  },
-  {
-    dt: 1712901600,
-    temp: {
-      min: 85.74,
-      max: 100
-    },
-  },
-  {
-    dt: 1712988000,
-    temp: {
-      min: 89.74,
-      max: 100
-    },
-  },
-  {
-    dt: 1713074400,
-    temp: {
-      min: 89.74,
-      max: 100
-    },
-  },
-]
+// const mockupList = [
+//   {
+//     dt: 1712383200,
+//     temp: {
+//       min: 20,
+//       max: 100
+//     },
+//   },
+//   {
+//     dt: 1712469600,
+//     temp: {
+//       min: 80.74,
+//       max: 100
+//     },
+//   },
+//   {
+//     dt: 1712556000,
+//     temp: {
+//       min: 100,
+//       max: 105
+//     },
+//   },
+//   {
+//     dt: 1712642400,
+//     temp: {
+//       min: 90,
+//       max: 95
+//     },
+//   },
+//   {
+//     dt: 1712728800,
+//     temp: {
+//       min: 89.74,
+//       max: 100
+//     },
+//   },
+//   {
+//     dt: 1712815200,
+//     temp: {
+//       min: 30,
+//       max: 43
+//     },
+//   },
+//   {
+//     dt: 1712901600,
+//     temp: {
+//       min: 85.74,
+//       max: 100
+//     },
+//   },
+//   {
+//     dt: 1712988000,
+//     temp: {
+//       min: 89.74,
+//       max: 100
+//     },
+//   },
+//   {
+//     dt: 1713074400,
+//     temp: {
+//       min: 89.74,
+//       max: 100
+//     },
+//   },
+// ]
 
 const Forecast = () => {
   const [value, setValue] = useState("")
