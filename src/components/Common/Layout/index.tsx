@@ -1,27 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react"
 import { AppShell, Burger, NavLink } from "@mantine/core"
-import { useDisclosure } from "@mantine/hooks";
-import { Logo } from "../Logo";
+import { useDisclosure } from "@mantine/hooks"
+import { Logo } from "../Logo"
 import styles from "./Layout.module.css"
 
 const menu = [
   {
-    label: "Current",
+    label: "Current Weather",
     href: "/"
   },
   {
-    label: "Historic",
-    href: "/"
-  },
-  {
-    label: "Multiple Cities",
-    href: "/"
+    label: "Forecast",
+    href: "/forecast"
   }
 ]
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
-  const [opened, { toggle }] = useDisclosure();
-  const [active, setActive] = useState(0);
+  const [opened, { toggle }] = useDisclosure()
+  const [active, setActive] = useState(0)
+
+  useEffect(() => {
+    if (window.location.href.includes('forecast'))
+      setActive(1)
+    else
+      setActive(0)
+  }, [])
 
   return (
     <AppShell
@@ -31,6 +34,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         breakpoint: 'sm',
         collapsed: { mobile: !opened },
       }}
+      padding="xl"
     >
       <AppShell.Header className={styles.header}>
         <Burger
@@ -42,14 +46,13 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         <Logo />
       </AppShell.Header>
 
-      <AppShell.Navbar p="lg" className={styles.navbar}>
+      <AppShell.Navbar p="xl" className={styles.navbar}>
         {menu?.map((item, index) => (
           <NavLink
             key={item.label}
-            // href={item.href}
+            href={item.href}
             label={item.label}
-            active={index === active}
-            onClick={() => setActive(index)}
+            active={active === index}
           />
         ))}
       </AppShell.Navbar>
