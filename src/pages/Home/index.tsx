@@ -30,7 +30,7 @@ const Home = () => {
       <Search handleChange={handleChange} value={value} />
 
       {
-        !debouncedValue ? <EmptyState />
+        !debouncedValue ? <EmptyState isForecast={false} />
         : isError ? <Error />
         : isSuccess && data ? (
           <Flex wrap="wrap" mt="xl" align="center">
