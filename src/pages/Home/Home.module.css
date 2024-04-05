@@ -1,5 +1,5 @@
 .stat {
-  @media screen and (max-width: 520px) {
+  @media screen and (max-width: 840px) {
     width: 100% !important;
   }
 }

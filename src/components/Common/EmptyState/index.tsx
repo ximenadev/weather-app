@@ -1,6 +1,6 @@
 import { Flex, Title, Text } from "@mantine/core"
 
-const EmptyState = () => {
+const EmptyState = ({ isForecast }: { isForecast: boolean }) => {
   return (
     <Flex
       p="xl"
@@ -16,7 +16,7 @@ const EmptyState = () => {
         fontWeight: 300,
         fontSize: "clamp(1.5rem, 2.5vw, 3.5rem)"
       }}>
-        Will it rain today?
+        Will it rain {isForecast ? "tomorrow" : "today"}?
       </Title>
       <Text
         style={{
