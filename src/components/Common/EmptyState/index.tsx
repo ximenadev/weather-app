@@ -1,6 +1,6 @@
 import { Flex, Title, Text } from "@mantine/core"
 
-const EmptyState = ({ isForecast }: { isForecast: boolean }) => {
+const EmptyState = ({ isForecast=false }: { isForecast: boolean }) => {
   return (
     <Flex
       p="xl"
